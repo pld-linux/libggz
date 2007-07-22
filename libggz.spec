@@ -11,10 +11,13 @@ URL:		http://www.ggzgamingzone.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This is the GGZ base library libggz, used by the GGZ Gaming Zone server (ggzd), the ggzcore library and other components.
+This is the GGZ base library libggz, used by the GGZ Gaming Zone
+server (ggzd), the ggzcore library and other components.
 
 %description -l pl.UTF-8
-To jest podstawowa biblioteka projektu GGZ - libggz, użyana przez serwer GGZ Gaming Zone (ggzd), bibliotekę ggzcore oraz inne komponenty.
+To jest podstawowa biblioteka projektu GGZ - libggz, użyana przez
+serwer GGZ Gaming Zone (ggzd), bibliotekę ggzcore oraz inne
+komponenty.
 
 %package devel
 Summary:	Header files for libggz library
