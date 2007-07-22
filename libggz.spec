@@ -10,6 +10,8 @@ Source0:	http://ftp.belnet.be/packages/ggzgamingzone/ggz/0.0.14/%{name}-%{versio
 URL:		http://www.ggzgamingzone.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	gnutls-devel
+BuildRequires:	libgcrypt-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -52,7 +54,9 @@ Statyczna biblioteka libggz.
 %{__aclocal} -I m4/ -I m4/ggz/
 %{__autoconf}
 %{__automake}
-%configure
+%configure \
+	--with-tls \
+	--with-gcrypt
 %{__make}
 
 %install
