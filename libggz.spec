@@ -26,7 +26,7 @@ Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
-eader files for libggz library.
+Header files for libggz library.
 
 %description devel -l pl.UTF-8
 Pliki nagłówkowe biblioteki libggz.
