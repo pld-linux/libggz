@@ -7,6 +7,7 @@ License:	GPL v2.1+
 Group:		Libraries
 Source0:	http://ftp.belnet.be/packages/ggzgamingzone/ggz/0.0.14/%{name}-%{version}.tar.gz
 # Source0-md5:	dfd0039042e1bc6c899faaa63d56dad1
+Patch0:		%{name}-link.patch
 URL:		http://www.ggzgamingzone.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -52,6 +53,7 @@ Statyczna biblioteka libggz.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__libtoolize}
@@ -60,8 +62,9 @@ Statyczna biblioteka libggz.
 %{__autoheader}
 %{__automake}
 %configure \
-	--with-tls \
-	--with-gcrypt
+	--with-gcrypt \
+	--with-gnutls-libraries=%{_libdir} \
+	--with-tls
 %{__make}
 
 %install
