@@ -3,13 +3,13 @@ Summary(pl.UTF-8):	Biblioteka pozwalająca grać online w darmowe gry
 Name:		libggz
 Version:	0.0.14
 Release:	1
-License:	GPL v2.1+
+License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://ftp.belnet.be/packages/ggzgamingzone/ggz/0.0.14/%{name}-%{version}.tar.gz
 # Source0-md5:	dfd0039042e1bc6c899faaa63d56dad1
 Patch0:		%{name}-link.patch
 URL:		http://www.ggzgamingzone.org/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	gnutls-devel
 BuildRequires:	libgcrypt-devel
@@ -83,12 +83,15 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README*
 %attr(755,root,root) %{_libdir}/libggz.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libggz.so.2
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libggz.so
 %{_libdir}/libggz.la
-%{_includedir}/ggz*.h
+%{_includedir}/ggz.h
+%{_includedir}/ggz_common.h
+%{_includedir}/ggz_dio.h
 %{_mandir}/man3/ggz.h.3*
 
 %files static
