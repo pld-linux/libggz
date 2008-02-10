@@ -69,6 +69,7 @@ Statyczna biblioteka libggz.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_datadir}/ggz
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -84,6 +85,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog NEWS README*
 %attr(755,root,root) %{_libdir}/libggz.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libggz.so.2
+%dir %{_datadir}/ggz
 
 %files devel
 %defattr(644,root,root,755)
