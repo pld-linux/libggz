@@ -2,12 +2,13 @@ Summary:	Makes free online gaming possible
 Summary(pl.UTF-8):	Biblioteka pozwalająca grać online w darmowe gry
 Name:		libggz
 Version:	0.0.14.1
-Release:	3
+Release:	4
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://ftp.belnet.be/packages/ggzgamingzone/ggz/%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	603739504648833779aa13b0327a1c3d
 Patch0:		%{name}-link.patch
+Patch1:		%{name}-gnutls.patch
 URL:		http://www.ggzgamingzone.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -54,6 +55,7 @@ Statyczna biblioteka libggz.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__libtoolize}
